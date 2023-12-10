@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="text-center container">
+    <h1>Data Inventory</h1>
+    <p>Inventory Data Coming Soon</p>
+    <a href="/inventory/add" class="btn btn-primary mb-3">Add Store</a>
+   
+    <table  class="table table-striped table-bordered table-hover ">
+      <thead>
+        <tr>
+          <th>Store Number</th>
+          <th>Store Location</th>
+          <th>Pepsi</th>
+          <th>Mountain Dew</th>
+          <th>Starry Mist</th>
+          <th>Coca-Cola</th>
+          <th>Dr. Pepper</th>
+          <th>Doc 360</th>
+          <th>Fanta</th>
+          <th>Sprite</th>
+          <th>Water</th>
+          <th>Gatorade</th>
+          <th>Red Bull</th>
+        </tr>
+      </thead>
+        <tbody>
+        <% for(var i=0; i<inventory.length; i++) {%>
+          <tr>
+            <td><%= inventory[i].storenumber %></td>
+            <td><%= inventory[i].storelocation %></td>
+            <td><%= inventory[i].pepsi %></td>
+            <td><%= inventory[i].mountaindew %></td>
+            <td><%= inventory[i].starry %></td>
+            <td><%= inventory[i].cocacola %></td>
+            <td><%= inventory[i].drpepper %></td>
+            <td><%= inventory[i].doc360 %></td>
+            <td><%= inventory[i].fanta %></td>
+            <td><%= inventory[i].sprite %></td>
+            <td><%= inventory[i].water %></td>
+            <td><%= inventory[i].gatorade %></td>
+            <td><%= inventory[i].redbull %></td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

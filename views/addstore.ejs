@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="text-center container">
+    <h1 class="mt-5">Add a Store Form</h1>
+    <br>
+    <a href="/inventory" class="btn btn-primary mb-3">Go back to Inventory Page</a>
+    <br>
+    <form action="/inventory/add" method="post" onSubmit="return ValidateFormInfoFilled(event)">
+        <label for="storenumber">Store Number</label>
+        <input type="number" class="form-control" name="storenumber" id="storenumber" >
+        <br>
+        <label for="storelocation">Store Location</label>
+        <input type="text" class="form-control" name="storelocation" id="storelocation" >
+        <br>
+        <label for="pepsi">Pepsi</label>
+        <input type="number" class="form-control" name="pepsi" id="pepsi" >
+        <br>
+        <label for="mountaindew">Mountain Dew</label>
+        <input type="number" class="form-control" name="mountaindew" id="mountaindew" >
+        <br>
+        <label for="starry">Starry Mist</label>
+        <input type="number" class="form-control" name="starry" id="starry" >
+        <br>
+        <label for="cocacola">Coca-Cola</label>
+        <input type="number" class="form-control" name="cocacola" id="cocacola" >
+        <br>
+        <label for="drpepper">Dr. Pepper</label>
+        <input type="number" class="form-control" name="drpepper" id="drpepper" >
+        <br>
+        <label for="doc360">Doc 360</label>
+        <input type="number" class="form-control" name="doc360" id="doc360" >
+        <br>
+        <label for="fanta">Fanta</label>
+        <input type="number" class="form-control" name="fanta" id="fanta" >
+        <br>
+        <label for="sprite">Sprite</label>
+        <input type="number" class="form-control" name="sprite" id="sprite" >
+        <br>
+        <label for="water">Water</label>
+        <input type="number" class="form-control" name="water" id="water" >
+        <br>
+        <label for="gatorade">Gatorade</label>
+        <input type="number" class="form-control" name="gatorade" id="gatorade" >
+        <br>
+        <label for="redbull">Red Bull</label>
+        <input type="text" class="form-control" name="redbull" id="redbull" >
+        <br>
+        <button type="submit" class="btn btn-primary" onClick="ValidateFormInfoFilled()">Submit</button>
+    </form>
+    
+    </div>
+    <script>
+        function ValidateFormInfoFilled() {
+            var storenumber = document.getElementById("storenumber").value;
+            var storelocation = document.getElementById("storelocation").value;
+            var pepsi = document.getElementById("pepsi").value;
+            var mountaindew = document.getElementById("mountaindew").value;
+            var starry = document.getElementById("starry").value;
+            var cocacola = document.getElementById("cocacola").value;
+            var drpepper = document.getElementById("drpepper").value;
+            var doc360 = document.getElementById("doc360").value;
+            var fanta = document.getElementById("fanta").value;
+            var sprite = document.getElementById("sprite").value;
+            var water = document.getElementById("water").value;
+            var gatorade = document.getElementById("gatorade").value;
+            var redbull = document.getElementById("redbull").value;
+            if (storenumber == "" || storelocation == "" || pepsi == "" || mountaindew == "" || starry == "" || cocacola == "" || drpepper == "" || doc360 == "" || fanta == "" || sprite == "" || water == "" || gatorade == "" || redbull == "") {
+                alert("Please fill in all fields");
+                event.preventDefault();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+  </body>
+</html>
+
+
