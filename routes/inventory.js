@@ -28,10 +28,29 @@ try {
 }
 */
 
+var warehouseInventory = [
+{
+    warehousenumber: 1,
+    warehouselocation: "Kansas",
+    pepsi: 987,
+    mountaindew: 843,
+    starry: 999,
+    cocacola:556,
+    drpepper: 764,
+    doc360: 431,
+    fanta: 834,
+    sprite: 342,
+    water: 713,
+    gatorade: 253,
+    redbull: 398,
+},
+];
+
+
 
 var inventory = await inventoryschema.find();
 
-res.render('inventory',{ inventory: inventory});
+res.render('inventory',{ inventory: inventory, warehouseInventory: warehouseInventory});
 
 });
 
@@ -45,6 +64,7 @@ router.get('/add', function(req, res, next) {
 
 router.post('/add', async function(req, res, next) {
     var inventory = new inventoryschema({
+        _id: req.body.id,
         storenumber: req.body.storenumber,  
         storelocation: req.body.storelocation,
         pepsi: req.body.pepsi,
@@ -69,5 +89,20 @@ router.post('/add', async function(req, res, next) {
     }
 });
 
+router.get('/delete', async function(req, res, next) {
+    let id = req.query._id;
+    console.log(id);
+
+    try {
+
+        await inventoryschema.findByIdAndDelete(id);
+        res.redirect('/inventory');
+    } catch (err) {
+        
+        console.log(err);
+        res.redirect('/');
+    }
+
+});
 
 module.exports = router;

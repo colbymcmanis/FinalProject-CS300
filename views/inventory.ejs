@@ -9,7 +9,48 @@
     <h1>Data Inventory</h1>
     <p>Inventory Data Coming Soon</p>
     <a href="/inventory/add" class="btn btn-primary mb-3">Add Store</a>
-   
+
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Warehouse Number</th>
+          <th>Warehouse Location</th>
+          <th>Pepsi</th>
+          <th>Mountain Dew</th>
+          <th>Starry Mist</th>
+          <th>Coca-Cola</th>
+          <th>Dr. Pepper</th>
+          <th>Doc 360</th>
+          <th>Fanta</th>
+          <th>Sprite</th>
+          <th>Water</th>
+          <th>Gatorade</th>
+          <th>Red Bull</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<warehouseInventory.length; i++) {%>
+          <tr>
+            <td><%= warehouseInventory[i].warehousenumber %></td>
+            <td><%= warehouseInventory[i].warehouselocation %></td>
+            <td><%= warehouseInventory[i].pepsi %></td>
+            <td><%= warehouseInventory[i].mountaindew %></td>
+            <td><%= warehouseInventory[i].starry %></td>
+            <td><%= warehouseInventory[i].cocacola %></td>
+            <td><%= warehouseInventory[i].drpepper %></td>
+            <td><%= warehouseInventory[i].doc360 %></td>
+            <td><%= warehouseInventory[i].fanta %></td>
+            <td><%= warehouseInventory[i].sprite %></td>
+            <td><%= warehouseInventory[i].water %></td>
+            <td><%= warehouseInventory[i].gatorade %></td>
+            <td><%= warehouseInventory[i].redbull %></td>
+            
+          </tr>
+        <% } %>
+      </tbody>
+    </table> <!-- Move the closing tag for the first table element here -->
+
     <table  class="table table-striped table-bordered table-hover ">
       <thead>
         <tr>
@@ -26,6 +67,7 @@
           <th>Water</th>
           <th>Gatorade</th>
           <th>Red Bull</th>
+          <th>Actions</th>
         </tr>
       </thead>
         <tbody>
@@ -44,10 +86,15 @@
             <td><%= inventory[i].water %></td>
             <td><%= inventory[i].gatorade %></td>
             <td><%= inventory[i].redbull %></td>
+  
+            <td><a href="/inventory/delete?_id=<%=inventory[i]._id %>" 
+              onclick="return confirm('Are you sure you want to delete this store?')"">Delete</a></td>
+
+
           </tr>
         <% } %>
-        </tbody>
-      </table>
+      </tbody>
+    </table> 
     </div>
   </body>
 </html>
