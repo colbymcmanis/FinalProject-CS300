@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Login Page</title>
+    <link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class ="text-center container">
+      <h1 class="mt-5">Login Page</h1>
+
+      <form action="/dashboard" method="post">
+        <label class="mt-5" for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+     
+
+      
+        <label class="mt-5" for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+     
+      
+        <div class="text-center mt-3">
+          <button type="button" class="btn btn-primary" onclick="ValidateUserInfoFilled()">Login</button>
+        </div>
+      </form>
+
+      <script>
+      function ValidateUserInfoFilled(){
+        var Username = document.getElementById('username').value
+        var Password = document.getElementById('password').value
+
+        if (Username === "" && Password === "")
+        {
+
+          alert('Please Enter a Username and Password. Thank You!');
+
+        }
+        else{
+
+          window.location.href = "/inventory";
+
+        }
+      } 
+      </script>
+
+    </div>
   </body>
 </html>
