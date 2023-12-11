@@ -12,11 +12,11 @@
         <a href="/inventory" class="btn btn-primary mb-3">Go back to Inventory Page</a>
         <br>
         <form action="/inventory/transfer" method="post" onSubmit="return ValidateFormInfoFilledTransfer(formdata)">
-                <label> Please Enter the Amount of each of the following items you would like to transfer to thisstore.</label>
+                <label> Please Enter the Amount of each of the following items you would like to transfer to this store.</label>
                 <label> Note: if you want to transfer zero product of an item please enter 0 in that field.</label>
                 <br>
                 <br>
-                <input type="text" name="_id" id="_id" value=<%= id%>>
+                <input hidden readonly type="text" name="_id" id="_id" value=<%= id%>>
                 <label for="pepsi">Pepsi</label>
                 <input type="number" class="form-control" name="pepsi" id="pepsi" >
                 <br>

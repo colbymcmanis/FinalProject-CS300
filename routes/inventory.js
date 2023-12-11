@@ -112,7 +112,7 @@ router.post('/transfer', async function(req, res, next) {
 
 
 router.post('/add', async function(req, res, next) { 
-    console.log(formdata)
+  
     var inventory = new inventoryschema({
         _id: req.body.id,
         storenumber: req.body.storenumber,  
